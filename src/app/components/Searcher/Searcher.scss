@@ -1,0 +1,50 @@
+@import '../../../assets/settings/main.scss';
+
+.tb-c-searcher {
+  @include marginTop(0);
+  @extend .letterSpacing;
+  @extend .fontType;
+  border-radius: $border-radius;
+  background-color: $white;
+  display: flex;
+  border: 2px solid $tb-border-grey;
+
+  &__icon-container {
+    @include padding(1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+
+    &__icon {
+      width: 1.5em;
+    }
+  }
+
+  &__field {
+    width: 85%;
+
+    & input[type="text"], input[type="text"]:focus {
+      @include paddingLeft(2);
+      @extend .letterSpacing;
+      @extend .fontType;
+      @extend .fontS;
+      color: $grey-3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: none;
+      outline: none;
+      width: 100%;
+      height: 100%;
+      background-color: transparent;
+
+      &::placeholder {
+        @extend .letterSpacing;
+        @extend .fontType;
+        @extend .fontS;
+        color: $tb-inputs-grey;
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
-import TaskList from '../../components/TaskList';
+import Home from '../pages/Home/Home';
 
 const TaskForm = React.lazy(() => import('../../components/TaskForm'));
 const Error404 = React.lazy(() => import('../pages/Error404/Error404'));
@@ -11,7 +11,7 @@ const Content = () => {
 	const location = useLocation();
 	return (
 		<Routes location={location} key={location.pathname}>
-			<Route path={'/'} element={<TaskList />} />
+			<Route path={'/'} element={<Home/>} />
       <Route
 				path={'/create-task'}
 				element={

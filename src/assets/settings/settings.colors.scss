@@ -1,9 +1,10 @@
 $tb-black-dark: #0e0e0e;
+$tb-shadow: #00000033;
 
 $tb-semi-yellow: #dad8e46c;
 $tb-border-grey: #aaa5bd7c;
 $tb-inputs-grey: #66656baf;
-$tb-semi-orange: #eba089;
+$tb-semi-green: #89ebba;
 
 $white: #fcfcfc;
 $grey-1: #efeff2;
@@ -16,8 +17,9 @@ $text-color: $grey-4;
 
 :export {
   tb-black-dark: $tb-black-dark;
+  tb-shadow: $tb-shadow;
   tb-semi-yellow: $tb-semi-yellow;
-  tb-semi-orange: $tb-semi-orange;
+  tb-semi-green: $tb-semi-green;
   tb-border-grey: $tb-border-grey;
   tb-inputs-grey: $tb-inputs-grey;
   white: $white;

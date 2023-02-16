@@ -1,0 +1,8 @@
+@import '../../../assets/settings/main.scss';
+
+.tb-c-home {
+  @include padding(0);
+  @extend .letterSpacing;
+  @extend .fontType;
+  background-color: $white;
+}

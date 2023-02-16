@@ -4,14 +4,22 @@ const initialState = [
   {
     id: "1",
     title: "Task 1",
-    completed: false,
     description: "This is a task 1",
+    created: "2020",
+    deadline: "",
+    type: "House",
+    priority: "high",
+    column: "todo",
   },
   {
     id: "2",
     title: "Task 2",
-    completed: false,
     description: "This is a task 2",
+    created: "2021",
+    deadline: "",
+    type: "Job",
+    priority: "low",
+    column: "todo",
   },
 ];
 

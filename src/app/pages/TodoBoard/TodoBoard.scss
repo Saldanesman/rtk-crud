@@ -1,0 +1,45 @@
+@import '../../../assets/settings/main.scss';
+
+.tb-c-dashboard {
+  @extend .letterSpacing;
+  @extend .fontType;
+  min-height: 100%;
+
+  &__header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    &__title {
+    @extend .fontXXL;
+    @include paddingLeft(7.5);
+    color: $tb-black-dark;
+    font-weight: bold;
+    }
+
+    &__info {
+      @include marginLeft(5);
+      display: flex;
+      justify-content: center;
+      align-items:end;
+      width: 1.5rem;
+      height: 1.5rem;
+      border: 2px solid $tb-border-grey;
+      border-radius: $border-radius;
+    }
+  }
+  
+  &__columns {
+    @include paddingRight(15);
+    @include paddingLeft(15);
+    @include paddingBottom(7.5);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2.5rem;
+
+    &__column {
+      background-color: $tb-semi-yellow;
+      border-radius: $border-radius;
+    }
+  }
+}
