@@ -1,0 +1,28 @@
+$tb-black-dark: #0e0e0e;
+
+$tb-semi-yellow: #dad8e46c;
+$tb-border-grey: #aaa5bd7c;
+$tb-inputs-grey: #66656baf;
+$tb-semi-orange: #eba089;
+
+$white: #fcfcfc;
+$grey-1: #efeff2;
+$grey-2: #bababe;
+$grey-3: #666573;
+$grey-4: #161230;
+
+
+$text-color: $grey-4;
+
+:export {
+  tb-black-dark: $tb-black-dark;
+  tb-semi-yellow: $tb-semi-yellow;
+  tb-semi-orange: $tb-semi-orange;
+  tb-border-grey: $tb-border-grey;
+  tb-inputs-grey: $tb-inputs-grey;
+  white: $white;
+  grey-1: $grey-2;
+  grey-2: $grey-2;
+  grey-3: $grey-3;
+  $text-color: $grey-4;
+}

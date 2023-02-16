@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { addTask, updateTask } from '../features/tasks/taskSlice'
+import { addTask, updateTask } from '../redux/features/tasks/taskSlice'
 import { v4 as uuid} from 'uuid';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -39,7 +39,7 @@ const TaskForm = () => {
     if (params.id) {
       setTask(tasks.find(task => task.id === params.id));
     }
-  }, []);
+  }, [params.id, tasks]);
 
 
   return (

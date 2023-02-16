@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { deleteTask } from '../features/tasks/taskSlice'
+import { deleteTask } from '../redux/features/tasks/taskSlice'
 
 const TaskList = () => {
   const tasks = useSelector(state => state.tasks)
