@@ -8,7 +8,7 @@ const Home = (props) => {
     <div className={'tb-c-home'}>
       <Header />
       <div className={'tb-c-home__board'}>
-        <TodoBoard editModal={props.editModal} />
+        <TodoBoard editModal={props.editModal} createModal={props.createModal}/>
       </div>
     </div>
   )

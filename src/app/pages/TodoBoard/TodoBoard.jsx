@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from 'react-redux'
+import NewTask from "../../components/NewTask/NewTask";
 import TaskCard from "../../components/TaskCard/TaskCard";
+
 import './TodoBoard.scss';
 
 
@@ -25,7 +27,9 @@ const TodoBoard = (props) => {
     if (title === 'To do Board') setTitle('Done Board');
     else setTitle('To do Board');
   };
+
   
+
   return (
     <div className={'tb-c-dashboard'}>
       <div className={'tb-c-dashboard__header'}>
@@ -33,25 +37,37 @@ const TodoBoard = (props) => {
       </div>
       <div className={'tb-c-dashboard__columns'}>
         <div className={'tb-c-dashboard__columns__column'}>
-          <h1 className={'tb-c-dashboard__columns__column__title'}> To do </h1>
+          <div className={'tb-c-dashboard__columns__column__head'}>
+            <h1 className={'tb-c-dashboard__columns__column__head__title'}> To do </h1>
+            <NewTask column={'todo'} createModal={props.createModal} />
+          </div>
           {[...new Set(todo)].map((task) => {
-            return <TaskCard key={task.id} taskInfo={task} editModal={props.editModal}/>
+            return <TaskCard key={task.id} taskInfo={task} editModal={props.editModal} />
           })}
         </div>
         <div className={'tb-c-dashboard__columns__column'}>
-          <h1 className={'tb-c-dashboard__columns__column__title'}> In Progress </h1>
+          <div className={'tb-c-dashboard__columns__column__head'}>
+            <h1 className={'tb-c-dashboard__columns__column__head__title'}> In Progress </h1>
+            <NewTask column={'inProgress'} createModal={props.createModal} />
+          </div>
           {[...new Set(inProgress)].map((task) => {
             return <TaskCard key={task.id} taskInfo={task} editModal={props.editModal}/>
           })}
         </div>
         <div className={'tb-c-dashboard__columns__column'}>
-          <h1 className={'tb-c-dashboard__columns__column__title'}> Locked </h1>
+          <div className={'tb-c-dashboard__columns__column__head'}>
+            <h1 className={'tb-c-dashboard__columns__column__head__title'}> Locked </h1>
+            <NewTask column={'locked'} createModal={props.createModal}/>
+          </div>
           {[...new Set(locked)].map((task) => {
             return <TaskCard key={task.id} taskInfo={task} editModal={props.editModal}/>
           })}
         </div>
         <div className={'tb-c-dashboard__columns__column'}>
-          <h1 className={'tb-c-dashboard__columns__column__title'}> Done </h1>
+          <div className={'tb-c-dashboard__columns__column__head'}>
+            <h1 className={'tb-c-dashboard__columns__column__head__title'}> Done </h1>
+            <NewTask column={'done'} createModal={props.createModal}/>
+          </div>
           {[...new Set(done)].map((task) => {
             return <TaskCard key={task.id} taskInfo={task} editModal={props.editModal}/>
           })}

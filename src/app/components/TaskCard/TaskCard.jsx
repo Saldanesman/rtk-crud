@@ -9,7 +9,7 @@ import {ReactComponent as MediumPriority} from '../../../assets/images/medium-pr
 import {ReactComponent as HighPriority} from '../../../assets/images/high-priority.svg';
 
 import './TaskCard.scss';
-import ModalForm from "../ModalForm/ModalForm";
+import EditTask from "../EditTask/EditTask";
 
 
 const TaskCard = (props) => {
@@ -24,7 +24,7 @@ const TaskCard = (props) => {
       <Link className={'tb-c-task__title'} to={`/edit-task/${props.taskInfo?.id}`}> 
         {props.taskInfo?.title} 
       </Link>
-      <ModalForm editModal={props.editModal} />
+      <EditTask editModal={props.editModal} />
       <div className={'tb-c-task__content'}>
         <div className={'tb-c-task__content__dates'}>
           <p className={'tb-c-task__content__dates__date'}> 

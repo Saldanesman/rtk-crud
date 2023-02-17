@@ -41,12 +41,19 @@
       background-color: $tb-semi-yellow;
       border-radius: $border-radius;
 
-      &__title {
-        @include paddingLeft(2.5);
-        @extend .fontL;
-        color: $tb-black-dark;
-        font-weight: bold;
+      &__head {
+        @include paddingRight(5);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__title {
+          @include paddingLeft(2.5);
+          @extend .fontL;
+          color: $tb-black-dark;
+          font-weight: bold;
         }
+      }
     }
   }
 }

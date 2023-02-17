@@ -3,7 +3,6 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 
 import Home from '../pages/Home/Home';
 
-const TaskForm = React.lazy(() => import('../../components/TaskForm'));
 const Error404 = React.lazy(() => import('../pages/Error404/Error404'));
 
 
@@ -16,7 +15,7 @@ const Content = () => {
 				path={'/create-task'}
 				element={
 					<React.Suspense fallback={<div>Loading...</div>}>
-						<TaskForm />
+						<Home createModal={true} />
 					</React.Suspense>
 				}
 			/>
@@ -24,7 +23,7 @@ const Content = () => {
 				path={'/edit-task/:id'}
 				element={
 					<React.Suspense fallback={<div>Loading...</div>}>
-						<Home editModal={true}/>
+						<Home editModal={true} />
 					</React.Suspense>
 				}
 			/>

@@ -5,6 +5,13 @@
   @extend .fontType;
   min-height: 100%;
 
+  &__title {
+    @extend .letterSpacing;
+    @extend .fontType;
+    @extend .fontM;
+    color: $tb-black-dark;
+  }
+
   &__form {
     @include marginTop(7.5);
 
