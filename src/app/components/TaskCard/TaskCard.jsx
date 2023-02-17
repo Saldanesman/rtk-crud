@@ -22,7 +22,7 @@ const TaskCard = (props) => {
     <div className={'tb-c-task'}>
       <Link 
         className={'tb-c-task__title'}
-        to={`/edit-task/${props.taskInfo?.id}`}
+        to={{pathname: `/edit-task/${props.taskInfo?.id}`, state:{modal: true}}}
       > 
         {props.taskInfo?.title} 
       </Link>

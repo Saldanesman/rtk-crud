@@ -19,6 +19,16 @@ const initialState = [
     deadline: "",
     type: "Job",
     priority: "low",
+    column: "locked",
+  },
+  {
+    id: "3",
+    title: "Task 3",
+    description: "This is a task 3",
+    created: "2020",
+    deadline: "",
+    type: "Gym",
+    priority: "medium",
     column: "todo",
   },
 ];

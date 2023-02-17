@@ -1,6 +1,9 @@
 
 import { useState } from 'react';
-import Searcher from '../components/Searcher/Searcher';
+import Searcher from '../../app/components/Searcher/Searcher';
+import {ReactComponent as BackBoard} from '../../assets/images/backlog-icon.svg';
+import {ReactComponent as DashBoard} from '../../assets/images/dashboard-icon.svg';
+import {ReactComponent as User} from '../../assets/images/user.svg';
 import './Header.scss';
 
 
@@ -19,10 +22,11 @@ const Header = () => {
           <Searcher />
         </div>
         <button className={'tb-c-header__options__boards-toggle'}>
-        
+          {!isSelected && <BackBoard className={'tb-c-header__options__boards-toggle__icon'} onClick={toggleIcon} />}
+          {isSelected && <DashBoard className={'tb-c-header__options__boards-toggle__icon'} onClick={toggleIcon} />}
         </button>
         <div className={'tb-c-header__options__my-profile'}>
-          
+          <User className={'tb-c-header__options__my-profile__icon'} />
         </div>
       </div>
     </div>

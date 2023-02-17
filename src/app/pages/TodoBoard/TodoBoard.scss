@@ -40,6 +40,13 @@
     &__column {
       background-color: $tb-semi-yellow;
       border-radius: $border-radius;
+
+      &__title {
+        @include paddingLeft(2.5);
+        @extend .fontL;
+        color: $tb-black-dark;
+        font-weight: bold;
+        }
     }
   }
 }
