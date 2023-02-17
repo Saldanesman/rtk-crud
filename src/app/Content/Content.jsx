@@ -24,7 +24,7 @@ const Content = () => {
 				path={'/edit-task/:id'}
 				element={
 					<React.Suspense fallback={<div>Loading...</div>}>
-						<TaskForm />
+						<Home editModal={true}/>
 					</React.Suspense>
 				}
 			/>

@@ -4,7 +4,7 @@ import TaskCard from "../../components/TaskCard/TaskCard";
 import './TodoBoard.scss';
 
 
-const TodoBoard = () => {
+const TodoBoard = (props) => {
   const tasks = useSelector(state => state.tasks)
   const [title, setTitle] = useState('TO DO Board');
   const [todo, setTodo] = useState([]);
@@ -35,25 +35,25 @@ const TodoBoard = () => {
         <div className={'tb-c-dashboard__columns__column'}>
           <h1 className={'tb-c-dashboard__columns__column__title'}> To do </h1>
           {[...new Set(todo)].map((task) => {
-            return <TaskCard key={task.id} taskInfo={task}/>
+            return <TaskCard key={task.id} taskInfo={task} editModal={props.editModal}/>
           })}
         </div>
         <div className={'tb-c-dashboard__columns__column'}>
           <h1 className={'tb-c-dashboard__columns__column__title'}> In Progress </h1>
           {[...new Set(inProgress)].map((task) => {
-            return <TaskCard key={task.id} taskInfo={task}/>
+            return <TaskCard key={task.id} taskInfo={task} editModal={props.editModal}/>
           })}
         </div>
         <div className={'tb-c-dashboard__columns__column'}>
           <h1 className={'tb-c-dashboard__columns__column__title'}> Locked </h1>
           {[...new Set(locked)].map((task) => {
-            return <TaskCard key={task.id} taskInfo={task}/>
+            return <TaskCard key={task.id} taskInfo={task} editModal={props.editModal}/>
           })}
         </div>
         <div className={'tb-c-dashboard__columns__column'}>
           <h1 className={'tb-c-dashboard__columns__column__title'}> Done </h1>
           {[...new Set(done)].map((task) => {
-            return <TaskCard key={task.id} taskInfo={task}/>
+            return <TaskCard key={task.id} taskInfo={task} editModal={props.editModal}/>
           })}
         </div>
       </div>

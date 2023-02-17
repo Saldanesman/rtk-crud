@@ -47,11 +47,15 @@ const userSlice = createSlice({
       }
     },
     updateTask: (state, action) => {
-      const { id, title, description } = action.payload;
+      const { id, title, description, created, deadline, type, priority} = action.payload;
       const taskFound = state.find(task => task.id === id);
       if (taskFound) {
         taskFound.title = title;
         taskFound.description = description;
+        taskFound.created = created;
+        taskFound.deadline = deadline;
+        taskFound.type = type;
+        taskFound.priority = priority;
       }
     },
   },

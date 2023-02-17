@@ -9,10 +9,11 @@ import {ReactComponent as MediumPriority} from '../../../assets/images/medium-pr
 import {ReactComponent as HighPriority} from '../../../assets/images/high-priority.svg';
 
 import './TaskCard.scss';
+import ModalForm from "../ModalForm/ModalForm";
 
 
 const TaskCard = (props) => {
-  const dispatch = useDispatch(state => state.dispatch);
+  const dispatch = useDispatch(state => state.dispatch)
 
   const handleDelete = (id) => {
     dispatch(deleteTask(id));
@@ -20,12 +21,10 @@ const TaskCard = (props) => {
 
   return (
     <div className={'tb-c-task'}>
-      <Link 
-        className={'tb-c-task__title'}
-        to={{pathname: `/edit-task/${props.taskInfo?.id}`, state:{modal: true}}}
-      > 
+      <Link className={'tb-c-task__title'} to={`/edit-task/${props.taskInfo?.id}`}> 
         {props.taskInfo?.title} 
       </Link>
+      <ModalForm editModal={props.editModal} />
       <div className={'tb-c-task__content'}>
         <div className={'tb-c-task__content__dates'}>
           <p className={'tb-c-task__content__dates__date'}> 

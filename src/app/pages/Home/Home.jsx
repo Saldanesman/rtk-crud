@@ -2,13 +2,13 @@ import Header from "../../layout/Header";
 import TodoBoard from "../TodoBoard/TodoBoard";
 
 
-const Home = () => {
+const Home = (props) => {
 
   return (
     <div className={'tb-c-home'}>
       <Header />
       <div className={'tb-c-home__board'}>
-        <TodoBoard />
+        <TodoBoard editModal={props.editModal} />
       </div>
     </div>
   )
