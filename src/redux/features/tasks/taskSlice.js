@@ -10,6 +10,7 @@ const initialState = [
     type: "House",
     priority: "high",
     column: "todo",
+    todoBoard: true,
   },
   {
     id: "2",
@@ -20,6 +21,7 @@ const initialState = [
     type: "Job",
     priority: "low",
     column: "locked",
+    todoBoard: true,
   },
   {
     id: "3",
@@ -29,7 +31,8 @@ const initialState = [
     deadline: "",
     type: "Gym",
     priority: "medium",
-    column: "todo",
+    column: "inProgress",
+    todoBoard: true,
   },
 ];
 

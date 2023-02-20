@@ -37,7 +37,7 @@ const TaskCard = (props) => {
         <div className={'tb-c-task__content__icons'}>
           <p className={'tb-c-task__content__icons__type'}> 
             {props.taskInfo?.type} 
-            </p>
+          </p>
           <div className={'tb-c-task__content__icons__priority'}> 
             {props.taskInfo?.priority === 'high' && <HighPriority />}
             {props.taskInfo?.priority === 'medium' && <MediumPriority />}

@@ -1,17 +1,21 @@
 
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import Searcher from '../../app/components/Searcher/Searcher';
 import {ReactComponent as BackBoard} from '../../assets/images/backlog-icon.svg';
 import {ReactComponent as DashBoard} from '../../assets/images/dashboard-icon.svg';
 import {ReactComponent as User} from '../../assets/images/user.svg';
+import { updateBoard } from '../../redux/features/board/boardSlice';
 import './Header.scss';
 
 
 const Header = () => {
   const [isSelected, setIsSelected] = useState(false);
+  const dispatch = useDispatch();
 
   const toggleIcon = () => {
     setIsSelected(!isSelected);
+    dispatch(updateBoard(isSelected));
   };
 
 	return (

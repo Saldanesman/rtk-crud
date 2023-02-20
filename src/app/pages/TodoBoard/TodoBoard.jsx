@@ -8,7 +8,6 @@ import './TodoBoard.scss';
 
 const TodoBoard = (props) => {
   const tasks = useSelector(state => state.tasks)
-  const [title, setTitle] = useState('TO DO Board');
   const [todo, setTodo] = useState([]);
   const [inProgress, setInProgress] = useState([]);
   const [locked, setLocked] = useState([]);
@@ -23,17 +22,10 @@ const TodoBoard = (props) => {
     })
   }, [tasks]);
 
-  const toggleTitle = (title) => {
-    if (title === 'To do Board') setTitle('Done Board');
-    else setTitle('To do Board');
-  };
-
-  
-
   return (
     <div className={'tb-c-dashboard'}>
       <div className={'tb-c-dashboard__header'}>
-        <h1 className={'tb-c-dashboard__header__title'}> {title} </h1>
+        <h1 className={'tb-c-dashboard__header__title'}> TO DO Board </h1>
       </div>
       <div className={'tb-c-dashboard__columns'}>
         <div className={'tb-c-dashboard__columns__column'}>

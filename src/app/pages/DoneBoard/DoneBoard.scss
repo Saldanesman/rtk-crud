@@ -1,0 +1,95 @@
+@import '../../../assets/settings/main.scss';
+
+.tb-c-doneboard {
+  @extend .letterSpacing;
+  @extend .fontType;
+  min-height: 100%;
+
+  &__header {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    &__title {
+    @extend .fontXXL;
+    @include paddingLeft(7.5);
+    color: $tb-black-dark;
+    font-weight: bold;
+    }
+  }
+
+  &__list {
+    @extend .letterSpacing;
+    @extend .fontType;
+
+    &__card {
+      @include marginLeft(15);
+      @include marginRight(15);
+      display: flex;
+      border-radius: $border-radius;
+      border: 2px solid $tb-border-grey;
+
+      &__title {
+        @include paddingLeft(5);
+        @extend .fontS;
+        display: flex;
+        align-items: center;
+        color: $tb-black-dark;
+        width: 65%;
+      }
+
+      &__icons {
+        width: 35%;
+        display: flex;
+
+        &__type {
+          @include paddingTop(0.5);
+          @include paddingBottom(0.5);
+          @include paddingLeft(5);
+          @include paddingRight(5);
+          border-radius: $border-radius;
+          background-color: $tb-semi-green;
+          width: 55%;
+        }
+
+        &__date {
+          @include paddingLeft(2.5);
+          @include paddingRight(2.5);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 20%;
+          color: $tb-inputs-grey;
+        }
+
+        &__info {
+          @include paddingLeft(2.5);
+          @include paddingRight(2.5);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &__icon {
+            width: 1.5em;
+            height: 1.5em;
+            cursor: pointer;
+          }
+        }
+
+        &__delete {
+          @include paddingLeft(2.5);
+          @include paddingRight(2.5);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &__icon {
+            width: 1.5em;
+            height: 1.5em;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
