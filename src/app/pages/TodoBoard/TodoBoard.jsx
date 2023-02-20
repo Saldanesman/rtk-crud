@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import NewTask from "../../components/NewTask/NewTask";
 import TaskCard from "../../components/TaskCard/TaskCard";
 
+import { Tooltip } from 'antd';
 import './TodoBoard.scss';
 
 
@@ -31,7 +32,11 @@ const TodoBoard = (props) => {
         <div className={'tb-c-dashboard__columns__column'}>
           <div className={'tb-c-dashboard__columns__column__head'}>
             <h1 className={'tb-c-dashboard__columns__column__head__title'}> To do </h1>
-            <NewTask column={'todo'} createModal={props.createModal} />
+            <Tooltip title="Add TO DO task" color={'#0e0e0e'}>
+              <div>
+                <NewTask column={'todo'} createModal={props.createModal} />
+              </div>
+            </Tooltip>
           </div>
           {[...new Set(todo)].map((task) => {
             return <TaskCard key={task.id} taskInfo={task} editModal={props.editModal} />
@@ -40,7 +45,11 @@ const TodoBoard = (props) => {
         <div className={'tb-c-dashboard__columns__column'}>
           <div className={'tb-c-dashboard__columns__column__head'}>
             <h1 className={'tb-c-dashboard__columns__column__head__title'}> In Progress </h1>
-            <NewTask column={'inProgress'} createModal={props.createModal} />
+            <Tooltip title="Add IN PROGRESS task" color={'#0e0e0e'}>
+              <div>
+                <NewTask column={'inProgress'} createModal={props.createModal} />
+              </div>
+            </Tooltip>
           </div>
           {[...new Set(inProgress)].map((task) => {
             return <TaskCard key={task.id} taskInfo={task} editModal={props.editModal}/>
@@ -49,7 +58,11 @@ const TodoBoard = (props) => {
         <div className={'tb-c-dashboard__columns__column'}>
           <div className={'tb-c-dashboard__columns__column__head'}>
             <h1 className={'tb-c-dashboard__columns__column__head__title'}> Locked </h1>
-            <NewTask column={'locked'} createModal={props.createModal}/>
+            <Tooltip title="Add LOCKED task" color={'#0e0e0e'}>
+              <div>
+                <NewTask column={'locked'} createModal={props.createModal} />
+              </div>
+            </Tooltip>
           </div>
           {[...new Set(locked)].map((task) => {
             return <TaskCard key={task.id} taskInfo={task} editModal={props.editModal}/>
@@ -58,7 +71,11 @@ const TodoBoard = (props) => {
         <div className={'tb-c-dashboard__columns__column'}>
           <div className={'tb-c-dashboard__columns__column__head'}>
             <h1 className={'tb-c-dashboard__columns__column__head__title'}> Done </h1>
-            <NewTask column={'done'} createModal={props.createModal}/>
+            <Tooltip title="Add DONE task" color={'#0e0e0e'}>
+              <div>
+                <NewTask column={'done'} createModal={props.createModal} />
+              </div>
+            </Tooltip>
           </div>
           {[...new Set(done)].map((task) => {
             return <TaskCard key={task.id} taskInfo={task} editModal={props.editModal}/>

@@ -9,6 +9,7 @@
   background-color: $white;
   top: 0;
   border-bottom: 2px solid $tb-semi-yellow;
+  height: 5vh;
 
   &__logo{
     width: 25%;
@@ -35,9 +36,13 @@
       background-color: transparent;
       border: none;
 
-      &__icon {
-        // border: 3px solid $tb-black-dark;
-        // border-radius: $border-radius;
+      &__back-icon {
+        width: 2em;
+        cursor: pointer;
+      }
+
+      &__dash-icon {
+        transform: rotate(90deg);
         width: 2em;
         cursor: pointer;
       }

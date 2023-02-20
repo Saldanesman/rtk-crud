@@ -3,10 +3,30 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Searcher from '../../app/components/Searcher/Searcher';
 import {ReactComponent as BackBoard} from '../../assets/images/backlog-icon.svg';
-import {ReactComponent as DashBoard} from '../../assets/images/dashboard-icon.svg';
-import {ReactComponent as User} from '../../assets/images/user.svg';
 import { updateBoard } from '../../redux/features/board/boardSlice';
+
+import { Dropdown, Space } from 'antd';
+import { Tooltip } from 'antd';
+import { Avatar } from 'antd';
 import './Header.scss';
+
+const items = [
+  {
+    label: <a href="/">My Profile</a>,
+    key: '0',
+  },
+  {
+    label: <a href="/">Dark theme</a>,
+    key: '1',
+  },
+  {
+    type: 'divider',
+  },
+  {
+    label: 'Exit',
+    key: '3',
+  },
+];
 
 
 const Header = () => {
@@ -26,11 +46,21 @@ const Header = () => {
           <Searcher />
         </div>
         <button className={'tb-c-header__options__boards-toggle'}>
-          {!isSelected && <BackBoard className={'tb-c-header__options__boards-toggle__icon'} onClick={toggleIcon} />}
-          {isSelected && <DashBoard className={'tb-c-header__options__boards-toggle__icon'} onClick={toggleIcon} />}
+          {!isSelected && 
+            <BackBoard className={'tb-c-header__options__boards-toggle__back-icon'} onClick={toggleIcon} />
+          }
+          {isSelected && 
+            <BackBoard className={'tb-c-header__options__boards-toggle__dash-icon'} onClick={toggleIcon} />
+          }
         </button>
         <div className={'tb-c-header__options__my-profile'}>
-          <User className={'tb-c-header__options__my-profile__icon'} />
+        <Dropdown menu={{ items }} trigger={['click']}>
+          <a onClick={(e) => e.preventDefault()}>
+            <Space>
+              <Avatar style={{ backgroundColor: '#f56a00' }}>R</Avatar>
+            </Space>
+          </a>
+        </Dropdown>
         </div>
       </div>
     </div>

@@ -7,9 +7,12 @@ import { deleteTask } from '../../../redux/features/tasks/taskSlice';
 import {ReactComponent as LowPriority} from '../../../assets/images/low-priority.svg';
 import {ReactComponent as MediumPriority} from '../../../assets/images/medium-priority.svg';
 import {ReactComponent as HighPriority} from '../../../assets/images/high-priority.svg';
+import {ReactComponent as Delete} from '../../../assets/images/delete.svg';
+import {ReactComponent as Edit} from '../../../assets/images/edit.svg';
 
 import './TaskCard.scss';
 import EditTask from "../EditTask/EditTask";
+import { Tooltip } from 'antd';
 
 
 const TaskCard = (props) => {
@@ -21,9 +24,21 @@ const TaskCard = (props) => {
 
   return (
     <div className={'tb-c-task'}>
-      <Link className={'tb-c-task__title'} to={`/edit-task/${props.taskInfo?.id}`}> 
-        {props.taskInfo?.title} 
-      </Link>
+      <div className={'tb-c-task__head'}>
+        <h1 className={'tb-c-task__head__title'}> 
+          {props.taskInfo?.title} 
+        </h1>
+        <div className={'tb-c-task__head__icons'}>
+          <Link to={`/edit-task/${props.taskInfo?.id}`}>
+            <Tooltip title="Edit task" color={'#0e0e0e'}>
+              <Edit className={'tb-c-task__head__icons__icon'} />
+            </Tooltip>
+          </Link>
+          <Tooltip title="Delete task" color={'#0e0e0e'}>
+            <Delete className={'tb-c-task__head__icons__icon'} onClick={() => handleDelete(props.taskInfo?.id)} />
+          </Tooltip>
+        </div>
+      </div>
       <EditTask editModal={props.editModal} />
       <div className={'tb-c-task__content'}>
         <div className={'tb-c-task__content__dates'}>
@@ -39,12 +54,23 @@ const TaskCard = (props) => {
             {props.taskInfo?.type} 
           </p>
           <div className={'tb-c-task__content__icons__priority'}> 
-            {props.taskInfo?.priority === 'high' && <HighPriority />}
-            {props.taskInfo?.priority === 'medium' && <MediumPriority />}
-            {props.taskInfo?.priority === 'low' && <LowPriority />}
+            {props.taskInfo?.priority === 'high' && 
+              <Tooltip title="High priority" color={'#0e0e0e'}>
+                <HighPriority />
+              </Tooltip>
+            }
+            {props.taskInfo?.priority === 'medium' && 
+              <Tooltip title="Medium priority" color={'#0e0e0e'}>
+                <MediumPriority />
+              </Tooltip>
+            }
+            {props.taskInfo?.priority === 'low' && 
+              <Tooltip title="Low priority" color={'#0e0e0e'}>
+                <LowPriority />
+              </Tooltip>
+            }
           </div>
         </div>
-        <button onClick={() => handleDelete(props.taskInfo?.id)}>delete</button>
       </div>
     </div>
   )

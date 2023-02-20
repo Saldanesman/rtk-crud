@@ -3,7 +3,6 @@
 .tb-c-task {
   @include margin(2.5);
   @include paddingTop(2.5);
-  @include paddingBottom(2.5);
   @extend .letterSpacing;
   @extend .fontType;
   background-color: $white;
@@ -11,17 +10,41 @@
   box-shadow: 0 2px 2px 0 $tb-shadow;
   cursor: auto;
 
-  &__title {
-    @include margin(2.5);
-    @extend .fontM;
-    text-decoration: none;
-    color: $tb-black-dark;
-    font-weight: bold;
-    cursor: pointer;
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title {
+      @include margin(2.5);
+      @extend .fontM;
+      text-decoration: none;
+      color: $tb-black-dark;
+      font-weight: bold;
+      width: 75%;
+      overflow: hidden;
+    }
+  
+    &__icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &__icon {
+        @include padding(2.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1.5em;
+        height: 1.5em;
+        cursor: pointer;
+      }
+    }
   }
 
   &__content {
-    @include margin(2.5);
+    @include paddingRight(2.5);
+    @include paddingLeft(2.5);
 
     &__dates {
       @include paddingLeft(5);
@@ -36,10 +59,10 @@
 
     &__icons {
       display: flex;
+      justify-content: space-between;
 
       &__type {
         @include paddingTop(0.5);
-        @include paddingBottom(0.5);
         @include paddingLeft(5);
         @include paddingRight(5);
         border-radius: $border-radius;
@@ -47,7 +70,10 @@
       }
 
       &__priority {
-        @include marginLeft(10);
+        @include padding(1.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
   }

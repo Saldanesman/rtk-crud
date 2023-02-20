@@ -3,10 +3,13 @@ import { useSelector } from 'react-redux';
 
 import {ReactComponent as MoreInfo} from '../../../assets/images/points-3.svg';
 import {ReactComponent as Delete} from '../../../assets/images/delete.svg';
+import { Empty } from 'antd';
 import './DoneBoard.scss';
 
 const DoneBoard = () => {
   const tasks = useSelector(state => state.tasks);
+  
+  const backList = tasks.filter(task => !task.todoBoard)
 
   return (
     <div className={'tb-c-doneboard'}>
@@ -14,7 +17,7 @@ const DoneBoard = () => {
         <h1 className={'tb-c-doneboard__header__title'}> DONE Board </h1>
       </div>
       <div className={'tb-c-doneboard__list'}>
-        {tasks.map((task) => {
+        {backList.length !== 0 && backList.map((task) => {
           return (
             <div className={'tb-c-doneboard__list__card'} key={task.id}>
               <h1 className={'tb-c-doneboard__list__card__title'}>{task.title}</h1>
@@ -35,6 +38,7 @@ const DoneBoard = () => {
             </div>
           )
         })}
+        {backList.length === 0 && <Empty />}
       </div>
     </div>
   )
